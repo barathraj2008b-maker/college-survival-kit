@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Survival Kit</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>College Survival Kit</h1>
+        <p>Student Dashboard</p>
+    </header>
+
+    <main>
+
+        <section class="student-section">
+            <h2 id="studentName">Loading...</h2>
+            <p id="studentId"></p>
+        </section>
+
+        <section class="cards">
+
+            <div class="card">
+                <h3>Attendance</h3>
+                <p id="attendance">--%</p>
+            </div>
+
+            <div class="card">
+                <h3>Pending Assignments</h3>
+                <p id="pendingAssignments">--</p>
+            </div>
+
+        </section>
+
+        <section class="message">
+            <h2>Survival Status</h2>
+            <p id="message">Loading...</p>
+        </section>
+
+        <section class="attendance-section">
+            <h2>Attendance by Subject</h2>
+            <div id="attendanceList"></div>
+        </section>
+
+        <section class="assignment-section">
+            <h2>Assignments</h2>
+            <div id="assignmentList"></div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
