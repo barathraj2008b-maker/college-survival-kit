@@ -1,7 +1,7 @@
 const studentId = "101";
 
 async function loadDashboard() {
-    const response = await fetch(`http://localhost:8080/dashboard/${studentId}`);
+    const response = await fetch(`/dashboard/${studentId}`);
     const data = await response.json();
 
     document.getElementById("studentName").textContent = data.studentName;
@@ -12,14 +12,13 @@ async function loadDashboard() {
 }
 
 async function loadAttendance() {
-    const response = await fetch(`http://localhost:8080/attendance/student/${studentId}`);
+    const response = await fetch(`/attendance/student/${studentId}`);
     const data = await response.json();
 
     const attendanceList = document.getElementById("attendanceList");
 
     data.forEach(record => {
         const item = document.createElement("div");
-
         item.className = "attendance-item";
 
         item.innerHTML = `
@@ -31,19 +30,14 @@ async function loadAttendance() {
     });
 }
 
-loadDashboard();
-loadAttendance();
-loadAssignments();
-
 async function loadAssignments() {
-    const response = await fetch(`http://localhost:8080/assignments/student/${studentId}`);
+    const response = await fetch(`/assignments/student/${studentId}`);
     const data = await response.json();
 
     const assignmentList = document.getElementById("assignmentList");
 
     data.forEach(assignment => {
         const item = document.createElement("div");
-
         item.className = "assignment-item";
 
         item.innerHTML = `
@@ -56,3 +50,7 @@ async function loadAssignments() {
         assignmentList.appendChild(item);
     });
 }
+
+loadDashboard();
+loadAttendance();
+loadAssignments();
