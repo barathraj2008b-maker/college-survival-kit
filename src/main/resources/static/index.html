@@ -1,60 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>College Survival Kit</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <header>
-        <h1>College Survival Kit</h1>
-        <p>Student Dashboard</p>
-    </header>
 
-    <main>
+<header>
 
-        <section class="student-section">
-            <h2 id="studentName">Loading...</h2>
-            <p id="studentId"></p>
-        </section>
+    <h1>College Survival Kit</h1>
 
-        <section class="cards">
+    <p>Student Dashboard</p>
 
-            <div class="card">
-                <h3>Attendance</h3>
-                <p id="attendance">--%</p>
-            </div>
+</header>
 
-            <div class="card">
-                <h3>Pending Assignments</h3>
-                <p id="pendingAssignments">--</p>
-            </div>
 
-        </section>
 
-        <section class="message">
-            <h2>Survival Status</h2>
-            <p id="message">Loading...</p>
-        </section>
+<main>
 
-        <section class="attendance-section">
-            <h2>Attendance by Subject</h2>
-            <div id="attendanceList"></div>
-        </section>
 
-        <section class="assignment-section">
-            <h2>Assignments</h2>
-            <div id="assignmentList"></div>
-        </section>
+    <!-- Student Login -->
 
-    </main>
+    <section class="login-section">
 
-    <script src="script.js"></script>
+        <h2>View Dashboard</h2>
+
+
+        <input
+            type="text"
+            id="studentIdInput"
+            placeholder="Student ID"
+        >
+
+
+        <button
+            type="button"
+            onclick="loadStudent()"
+        >
+            View Dashboard
+        </button>
+
+
+        <!-- Invalid Student ID message -->
+
+        <p
+            id="studentIdError"
+            class="student-id-error"
+        ></p>
+
+    </section>
+
+
+
+    <!-- New Student Registration -->
+
+    <section class="register-section">
+
+        <h2>New Student?</h2>
+
+
+        <input
+            type="text"
+            id="newStudentName"
+            placeholder="Your Name"
+        >
+
+
+        <input
+            type="text"
+            id="newStudentId"
+            placeholder="Student ID"
+        >
+
+
+        <input
+            type="text"
+            id="newRollNumber"
+            placeholder="Roll Number"
+        >
+
+
+        <input
+            type="text"
+            id="newDepartment"
+            placeholder="Department"
+        >
+
+
+        <input
+            type="number"
+            id="newYear"
+            placeholder="Year"
+        >
+
+
+        <button
+            type="button"
+            onclick="registerStudent()"
+        >
+            Register
+        </button>
+
+    </section>
+
+
+
+    <!-- Student Information -->
+
+    <section class="student-section">
+
+        <h2 id="studentName">
+            Enter your Student ID
+        </h2>
+
+
+        <p id="studentId"></p>
+
+    </section>
+
+
+
+    <!-- Dashboard Cards -->
+
+    <section class="cards">
+
+
+        <div class="card">
+
+            <h3>Attendance</h3>
+
+            <p id="attendance">
+                --%
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>Pending Assignments</h3>
+
+            <p id="pendingAssignments">
+                --
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- Survival Status -->
+
+    <section class="message">
+
+        <h2>Survival Status</h2>
+
+        <p id="message">
+            Enter your Student ID to view your status.
+        </p>
+
+    </section>
+
+
+
+    <!-- Attendance -->
+
+    <section class="attendance-section">
+
+        <h2>Attendance by Subject</h2>
+
+
+        <div id="attendanceList">
+            Enter your Student ID to view attendance.
+        </div>
+
+    </section>
+
+
+
+    <!-- Add Attendance -->
+
+    <section class="add-attendance-section">
+
+        <h2>Add Attendance</h2>
+
+
+        <input
+            type="text"
+            id="attendanceSubject"
+            placeholder="Subject"
+        >
+
+
+        <input
+            type="number"
+            id="totalClasses"
+            placeholder="Total Classes"
+        >
+
+
+        <input
+            type="number"
+            id="attendedClasses"
+            placeholder="Attended Classes"
+        >
+
+
+        <button
+            type="button"
+            onclick="addAttendance()"
+        >
+            Add Attendance
+        </button>
+
+    </section>
+
+
+
+    <!-- Assignments -->
+
+    <section class="assignment-section">
+
+        <h2>Assignments</h2>
+
+
+        <div id="assignmentList">
+            Enter your Student ID to view assignments.
+        </div>
+
+    </section>
+
+
+
+    <!-- Add Assignment -->
+
+    <section class="add-assignment-section">
+
+        <h2>Add Assignment</h2>
+
+
+        <input
+            type="text"
+            id="assignmentTitle"
+            placeholder="Assignment Title"
+        >
+
+
+        <input
+            type="text"
+            id="assignmentSubject"
+            placeholder="Subject"
+        >
+
+
+        <select id="assignmentStatus">
+
+            <option value="Pending">
+                Pending
+            </option>
+
+            <option value="Completed">
+                Completed
+            </option>
+
+        </select>
+
+
+        <button
+            type="button"
+            onclick="addAssignment()"
+        >
+            Add Assignment
+        </button>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    <p>College Survival Kit</p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
 
 </body>
+
 </html>

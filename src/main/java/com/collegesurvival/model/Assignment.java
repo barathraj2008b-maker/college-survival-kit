@@ -12,18 +12,15 @@ public class Assignment {
     private String studentId;
     private String title;
     private String subject;
-    private String dueDate;
     private String status;
 
     public Assignment() {
     }
 
-    public Assignment(String studentId, String title, String subject, String dueDate, String status)
-    {
+    public Assignment(String studentId, String title, String subject, String status) {
         this.studentId = studentId;
         this.title = title;
         this.subject = subject;
-        this.dueDate = dueDate;
         this.status = status;
     }
 
@@ -41,10 +38,6 @@ public class Assignment {
 
     public String getSubject() {
         return subject;
-    }
-
-    public String getDueDate() {
-        return dueDate;
     }
 
     public String getStatus() {
@@ -65,10 +58,6 @@ public class Assignment {
 
     public void setSubject(String subject) {
         this.subject = subject;
-    }
-
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
     }
 
     public void setStatus(String status) {
